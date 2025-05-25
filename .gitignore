@@ -12,6 +12,7 @@ ENV/
 pyvenv.cfg
 
 # Cache directories
+.cache
 .cache/
 __pycache__/
 *.py[cod]
