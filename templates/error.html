@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <div class="logo">❌ Authentication Error</div>
+    <div class="subtitle">Something went wrong during authentication</div>
+</div>
+
+<div class="error-message">
+    <strong>Error:</strong> {{ error }}
+</div>
+
+<div class="instructions">
+    <h3>🔧 Troubleshooting:</h3>
+    <ul style="text-align: left; margin-left: 20px;">
+        <li>Make sure you granted all requested permissions</li>
+        <li>Check if your browser is blocking pop-ups</li>
+        <li>Try clearing your browser cache and cookies</li>
+        <li>Make sure you're using a supported browser</li>
+    </ul>
+</div>
+
+<div style="margin-top: 30px;" class="text-center">
+    <a href="/" class="btn btn-secondary">🔄 Try Again</a>
+</div>
+{% endblock %}

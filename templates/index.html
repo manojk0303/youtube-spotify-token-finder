@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <div class="logo">Spotify ↔️ YouTube Music</div>
+    <div class="subtitle">Authenticate with both platforms to migrate your playlists</div>
+</div>
+
+<div class="auth-section">
+    <h2>Step 1: Authenticate with Spotify</h2>
+    <p>Connect your Spotify account to access your playlists and create new ones.</p>
+    <a href="/auth/spotify" class="btn btn-spotify">🎵 Login with Spotify</a>
+</div>
+
+<div class="auth-section">
+    <h2>Step 2: Authenticate with YouTube Music</h2>
+    <p>Connect your YouTube Music account to access and create playlists.</p>
+    <a href="/auth/youtube" class="btn btn-youtube">🎥 Login with YouTube Music</a>
+</div>
+
+<div class="instructions">
+    <h3>📋 How to use this tool:</h3>
+    <ol>
+        <li>Click both authentication buttons above</li>
+        <li>Grant permissions to both services</li>
+        <li>Copy the generated tokens</li>
+        <li>Use the command-line tool with your tokens</li>
+        <li>Start migrating your playlists!</li>
+    </ol>
+</div>
+
+<div style="margin-top: 30px;" class="text-center">
+    <a href="/clear" class="btn btn-secondary">🔄 Clear All Sessions</a>
+</div>
+{% endblock %}

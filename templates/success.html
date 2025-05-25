@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="text-center">
+    <div class="logo">✅ Authentication Successful!</div>
+    <div class="subtitle">{{ platform }} connection established</div>
+</div>
+
+<div class="success-message">
+    <strong>Success!</strong> You're now authenticated with {{ platform }}.
+    {% if user %}
+    <br>Logged in as: <strong>{{ user }}</strong>
+    {% endif %}
+</div>
+
+<h3>📋 Your Access Token:</h3>
+<div class="token-display" id="tokenDisplay">{{ token }}</div>
+
+{% if expiry %}
+<div class="expiry-info">
+    <strong>⏰ Token expires:</strong> {{ expiry }}
+</div>
+{% endif %}
+
+<div class="text-center">
+    <button class="copy-btn" onclick="copyToClipboard(document.getElementById('tokenDisplay').textContent)">
+        📋 Copy Token
+    </button>
+</div>
+
+<div class="instructions">
+    <h3>🛠️ Next Steps:</h3>
+    <ol>
+        <li><strong>Copy the token above</strong> (click the Copy Token button)</li>
+        <li><strong>Save it using the command line tool:</strong></li>
+        {% if token_type == 'spotify' %}
+        <li><code>migrate-playlist set-token --spotify --token "YOUR_COPIED_TOKEN"</code></li>
+        {% else %}
+        <li><code>migrate-playlist set-token --youtube --token "YOUR_COPIED_TOKEN"</code></li>
+        {% endif %}
+        <li><strong>Authenticate with the other platform</strong> if you haven't already</li>
+        <li><strong>Start migrating!</strong> Use <code>migrate-playlist migrate --help</code> for options</li>
+    </ol>
+</div>
+
+<div style="margin-top: 30px;" class="text-center">
+    <a href="/" class="btn btn-secondary">🏠 Back to Home</a>
+    <a href="/clear" class="btn btn-secondary">🔄 Clear Session</a>
+</div>
+{% endblock %}

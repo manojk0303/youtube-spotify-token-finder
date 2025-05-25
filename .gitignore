@@ -1,0 +1,34 @@
+# Environment files
+.env
+.env.*
+*.env
+
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.Python
+pyvenv.cfg
+
+# Cache directories
+.cache/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Node modules (if you're using any JS)
+node_modules/
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
